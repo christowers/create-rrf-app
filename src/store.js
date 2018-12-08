@@ -1,13 +1,12 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import messageReducer from "./reducers/message";
-import thunk from "redux-thunk";
+import { createStore } from "redux";
 
 import rootReducer from "./reducers/root";
 import comments from "./data/comments";
 
-const reducer = combineReducers({
-  messageReducer
-});
+const defaultState = {
+  comments
+};
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, defaultState);
+
 export default store;

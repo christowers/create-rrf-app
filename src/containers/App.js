@@ -1,17 +1,12 @@
 import React, { Component } from "react";
-import InputPreview from "../components/InputPreview";
 import { connect } from "react-redux";
-import { setMessage } from "../actions/message";
 import { Link } from "react-router-dom";
+import Comments from "../components/Comments";
 import logo from "../logo.svg";
 import "../App.css";
 
 class App extends Component {
-  onChange = value => {
-    this.props.dispatch(setMessage(value));
-  };
   render() {
-    const { message } = this.props.messageReducer;
     return (
       <div className="App">
         <header className="App-header">
@@ -19,10 +14,11 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <InputPreview value={message} onChange={this.onChange} />
           <Link to="/about">
             <button>Go to About</button>
           </Link>
+          <br />
+          <Comments {...this.props} />
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -31,6 +27,7 @@ class App extends Component {
           >
             Learn React
           </a>
+          <br />
         </header>
       </div>
     );
