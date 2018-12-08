@@ -1,24 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import Comments from "../components/Comments";
 import logo from "../logo.svg";
 import "../App.css";
 
-class App extends Component {
+class Home extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <Link to="/about">
-            <button>Go to About</button>
-          </Link>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-md-4">Lorem</div>
+              <div className="col-md-4">Ipsum</div>
+              <div className="col-md-4">Dolor</div>
+            </div>
+          </div>
           <br />
-          <Comments {...this.props} />
+          <Comments page="Home" {...this.props} />
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -34,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default connect(state => state)(App);
+export default connect(state => state)(Home);

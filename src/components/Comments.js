@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Comments extends Component {
   render() {
-    const comments = this.props.comments[1] || [];
+    const comments = this.props.comments[this.props.page] || [];
     return (
       <div>
         {comments.map((comment, i) => {
